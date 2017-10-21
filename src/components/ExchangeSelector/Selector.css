@@ -1,0 +1,10 @@
+.dropbtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #FCFCFC;
+  cursor: pointer;
+  font-size: 1.2em;
+  height: 45px;
+  width: 150px;
+}
