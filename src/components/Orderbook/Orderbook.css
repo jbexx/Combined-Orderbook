@@ -1,0 +1,11 @@
+.orderbook-container {
+  width: 100%;
+}
+
+.title-row,
+.row {
+  align-items: center;
+  display: flex;
+  justify-content: space-around;
+  width: 600px;
+}
