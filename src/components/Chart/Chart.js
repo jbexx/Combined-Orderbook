@@ -5,37 +5,37 @@ class Chart extends Component {
   render() {
     return (
       <div className='chart-container'>
-        <svg class='chart-axis'>
-          <g class='axis x-axis-left'>
+        <svg className='chart-axis'>
+          <g className='axis x-axis-left'>
             <line x1='90' x2='90' y1='5' y2='370'></line>
           </g>
-          <g class='axis x-axis-right'>
+          <g className='axis x-axis-right'>
             <line x1='1300' x2='1300' y1='5' y2='370'></line>
           </g>
-          <g class='axis y-axis'>
+          <g className='axis y-axis'>
             <line x1='90' x2='1300' y1='370' y2='370'></line>
           </g>
-          <g class="labels x-labels">
+          <g className="labels x-labels">
             <text x="100" y="400">5,700</text>
             <text x="246" y="400">5,800</text>
             <text x="392" y="400">5,900</text>
             <text x="538" y="400">6,000</text>
             <text x="684" y="400">6,100</text>
-            <text x="400" y="440" class="label-title">Price</text>
+            <text x="400" y="440" className="label-title">Price</text>
           </g>
-          <g class="labels y-labels">
+          <g className="labels y-labels">
             <text x="80" y="15">15</text>
             <text x="80" y="131">10</text>
             <text x="80" y="248">5</text>
             <text x="80" y="373">0</text>
-            <text x="50" y="200" class="label-title">Volume</text>
+            <text x="50" y="200" className="label-title">Volume</text>
           </g>
 
           <svg viewBox='100 -100 500 300' className='chart'>
             <polyline
               fill='pink'
               stroke='red'
-              stroke-width='2'
+              strokeWidth='2'
               points='
               00, 120
               20, 60
