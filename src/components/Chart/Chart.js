@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './Chart.css';
 
 class Chart extends Component {
+
   render() {
     return (
       <div className='chart-container'>
@@ -10,10 +11,10 @@ class Chart extends Component {
             <line x1='90' x2='90' y1='5' y2='370'></line>
           </g>
           <g className='axis x-axis-right'>
-            <line x1='1300' x2='1300' y1='5' y2='370'></line>
+            <line x1='1000' x2='1000' y1='5' y2='370'></line>
           </g>
           <g className='axis y-axis'>
-            <line x1='90' x2='1300' y1='370' y2='370'></line>
+            <line x1='90' x2='1000' y1='370' y2='370'></line>
           </g>
           <g className="labels x-labels">
             <text x="100" y="400">5,700</text>
@@ -31,7 +32,7 @@ class Chart extends Component {
             <text x="50" y="200" className="label-title">Volume</text>
           </g>
 
-          <svg viewBox='100 -100 500 300' className='chart'>
+          {/* <svg viewBox='100 -100 500 300' className='chart'>
             <polyline
               fill='pink'
               stroke='red'
@@ -60,8 +61,8 @@ class Chart extends Component {
               400, 60
               420, 70
               440, 80'/>
-          </svg>
-        </svg>
+          </svg> */}
+        </svg> 
       </div>
     );
   }
