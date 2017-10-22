@@ -23,10 +23,18 @@ exports.seed = (knex, Promise) => {
   return knex('bittrex_book').del()
     .then( () => knex('poloniex_book').del() )
     .then( () => {
-      const poloniexOrders = poloniexBook.bids.map( bid => poloniexBook.asks.map( ask => createPoloniexBook(knex, bid, ask) ) );
-      const bittrexOrders = bittrexBook.result.buy.map( bid =>  bittrexBook.result.sell.map( ask => createBittrexBook(knex, bid, ask) ) );
-      
-      return Promise.all( ...poloniexOrders, ...bittrexOrders );
+      const poloniexOrders = [];
+      const bittrexOrders = [];
+
+      for (let i = 0; i < poloniexBook.bids.length; i++) {
+        poloniexOrders.push( createPoloniexBook(knex, poloniexBook.bids[i], poloniexBook.asks[i]) );
+      }
+
+      for (let i = 0; i < bittrexBook.result.buy.length; i++) {
+        bittrexOrders.push( createBittrexBook(knex, bittrexBook.result.buy[i], bittrexBook.result.sell[i]) );
+      }
+
+      return Promise.all([ ...poloniexOrders, ...bittrexOrders ]);
     })
     .catch(error => console.error('Error seeding data', error));    
 };
