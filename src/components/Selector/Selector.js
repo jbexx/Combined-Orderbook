@@ -5,8 +5,7 @@ class Selector extends Component {
   render() {
     return (
       <div className="selector-container">
-        <select class="dropbtn">ETH
-        </select>
+        <select class="dropbtn">ETH</select>
       </div>
     );
   }

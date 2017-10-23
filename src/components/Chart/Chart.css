@@ -1,0 +1,21 @@
+.chart-container {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  height: 800px;
+  width: 100%;
+}
+
+.chart-axis {
+  height: 60%;
+  width: 80%;
+}
+
+.axis {
+  stroke: #7c7c7c;
+  stroke-width: 1;
+}
+
+.label-title {
+  font-weight: 600;
+}
