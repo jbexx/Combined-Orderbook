@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "autobahn": "^17.5.2",
     "body-parser": "^1.18.2",
     "express": "^4.16.2",
     "knex": "^0.13.0",
