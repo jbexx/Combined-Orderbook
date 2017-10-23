@@ -4,6 +4,12 @@ import './Chart.css';
 class Chart extends Component {
 
   render() {
+    
+    const scales = {scales: {
+      yAxes: [{
+          stacked: true
+      }]
+  }}
     return (
       <div className='chart-container'>
         <svg className='chart-axis'>
@@ -62,7 +68,7 @@ class Chart extends Component {
               420, 70
               440, 80'/>
           </svg> */}
-        </svg> 
+        </svg>
       </div>
     );
   }

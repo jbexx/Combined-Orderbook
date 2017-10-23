@@ -20,23 +20,21 @@ app.get('/', (request, response) => {
   response.sendFile(__dirname + './public/index.html');
 });
 
-//for getting a single exchanges book from the database
-//right now there is only 'poloniex_book' and 'bittrex_book'
-app.get('/api/v1/:book', (request, response) => {
-  const { book } = request.params
-  database(book).select()
-    .then( bookInfo => response.status(200).json({ bookInfo }) )
+app.get('/api/v1/book/:exchange_book', (request, response) => {
+  const { exchange_book } = request.params
+  database( exchange_book ).select()
+    .then( bookInfo => response.status(200).json( bookInfo ) )
     .catch( error => response.status(500).json({ error }) );
 });
 
 app.get('/api/v1/all-books', (request, response) => {
   database('bittrex_book').select()
-    .then( bitInfo => {
+    .then( bitPrices => {
       database('poloniex_book').select()
-        .then( poloInfo => Object.assign({}, { bittrex_book: bitInfo }, { poloniex_book: poloInfo }) )
-        .then( books => response.status(200).json(books))
-        .catch( error => response.status(500).json({ error }))
-    })
+        .then( poPrices => Object.assign({}, { bittrex_book: bitPrices }, { poloniex_book: poPrices }) )
+        .then( books => response.status(200).json(books) )
+        .catch( error => response.status(500).json({ error }) );
+    });
 });
 
 app.set('port', process.env.PORT || 3001);

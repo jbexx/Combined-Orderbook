@@ -3,64 +3,34 @@ import './Orderbook.css';
 
 class Orderbook extends Component {
   render() {
+    console.log('props in orderbook comp', this.props);
+
+    const { exchange, orders } = this.props;
+    const cleanedExchangeName = exchange.split('_').join(' ').toUpperCase();
+    const mappedExchangeInfo = orders.map( order => {
+      return(
+        <div className='row'>
+          <p className='data'>{ order.bid_volume }</p>
+          <p className='data'>{ order.bid }</p>
+          <p className='data'>{ order.ask }</p>
+          <p className='data'>{ order.ask_volume }</p>
+        </div>
+      );
+    });
+    
     return (
       <div className='oderbook-container'>
-        <div className='book-table'>
-          <h1 className='exchange'>Bittrex</h1>
-          <div className='title-row'>
-            <h3>Volume</h3>
-            <h3>Bid</h3>
-            <h3>Price</h3>
-            <h3>Ask</h3>
-            <h3>Volume</h3>
-          </div>
-          {/* will map through prices and append here but will have a place holder for now */}
-          <div className='row'>
-            <p className='data'>10m</p>
-            <p className='data'>5,950</p>
-            <p className='data'>5,951</p>
-            <p className='data'>5,952</p>
-            <p className='data'>9.8m</p>
-          </div>
-          <div className='row'>
-            <p className='data'>10m</p>
-            <p className='data'>5,950</p>
-            <p className='data'>5,951</p>
-            <p className='data'>5,952</p>
-            <p className='data'>9.8m</p>
-          </div>
-          <div className='row'>
-            <p className='data'>10m</p>
-            <p className='data'>5,950</p>
-            <p className='data'>5,951</p>
-            <p className='data'>5,952</p>
-            <p className='data'>9.8m</p>
-          </div>
-          <div className='row'>
-            <p className='data'>10m</p>
-            <p className='data'>5,950</p>
-            <p className='data'>5,951</p>
-            <p className='data'>5,952</p>
-            <p className='data'>9.8m</p>
-          </div>
-          <div className='row'>
-            <p className='data'>10m</p>
-            <p className='data'>5,950</p>
-            <p className='data'>5,951</p>
-            <p className='data'>5,952</p>
-            <p className='data'>9.8m</p>
-          </div>
-          <div className='row'>
-            <p className='data'>10m</p>
-            <p className='data'>5,950</p>
-            <p className='data'>5,951</p>
-            <p className='data'>5,952</p>
-            <p className='data'>9.8m</p>
-          </div>
+        <h1 className='exchange'>{ cleanedExchangeName }</h1>
+        <div className='title-row'>
+          <h3>Volume</h3>
+          <h3>Bid</h3>
+          <h3>Ask</h3>
+          <h3>Volume</h3>
         </div>
+        { mappedExchangeInfo }
       </div>
     );
-  }
-}
+  };
+};
 
 export default Orderbook;
