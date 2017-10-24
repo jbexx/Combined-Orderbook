@@ -9,27 +9,44 @@ class Orderbook extends Component {
     const cleanedExchangeName = exchange.split('_').join(' ').toUpperCase();
     const mappedExchangeInfo = orders.map( order => {
       return(
-        <div className='row'>
-          <p className='data'>{ order.bid_volume }</p>
-          <p className='data'>{ order.bid }</p>
-          <p className='data'>{ order.ask }</p>
-          <p className='data'>{ order.ask_volume }</p>
-        </div>
+        <tr className='row'>
+          <td className='data'>{ order.bid_volume }</td>
+          <td className='data'>{ order.bid }</td>
+          <td className='data'>{ order.ask }</td>
+          <td className='data'>{ order.ask_volume }</td>
+        </tr>
       );
     });
     
     return (
-      <div className='oderbook-container'>
+      <div className='orderbook-container'>
         <h1 className='exchange'>{ cleanedExchangeName }</h1>
-        <div className='title-row'>
-          <h3>Volume</h3>
-          <h3>Bid</h3>
-          <h3>Ask</h3>
-          <h3>Volume</h3>
-        </div>
-        { mappedExchangeInfo }
+        <table className='exchange-table'>
+          <thead>
+            <tr className='row'>
+              <th className='data-title'>Volume</th>
+              <th className='data-title'>Bid</th>
+              <th className='data-title'>Ask</th>
+              <th className='data-title'>Volume</th>
+            </tr>
+          </thead>
+          <tbody className='table-body'>
+            { mappedExchangeInfo }
+          </tbody>
+        </table>
       </div>
-    );
+
+      );
+      // <div className='oderbook-container'>
+      //   <h1 className='exchange'>{ cleanedExchangeName }</h1>
+      //   <div className='title-row'>
+      //     <h3>Volume</h3>
+      //     <h3>Bid</h3>
+      //     <h3>Ask</h3>
+      //     <h3>Volume</h3>
+      //   </div>
+      //   { mappedExchangeInfo }
+      // </div>
   };
 };
 

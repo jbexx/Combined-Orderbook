@@ -1,8 +1,9 @@
 .chart-container {
   align-items: center;
   display: flex;
+  height: 80%;
   justify-content: center;
-  height: 800px;
+  margin-top: 50px;
   width: 100%;
 }
 
@@ -18,4 +19,9 @@
 
 .label-title {
   font-weight: 600;
+}
+
+.chart {
+  height: 80%;
+  width: 80%;
 }

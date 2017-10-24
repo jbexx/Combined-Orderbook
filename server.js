@@ -6,6 +6,9 @@ const path = require('path');
 const bodyParser = require('body-parser');
 require('dotenv').config();
 
+const autobahn = require('autobahn');
+const wsuri = "wss://api.poloniex.com";
+
 const environment = process.env.NODE_ENV || 'development';
 const configuration = require('./knexfile')[environment];
 const database = require('knex')(configuration);
@@ -15,6 +18,26 @@ app.use(bodyParser.urlencoded({
   extended: true
 }));
 app.use(express.static(path.join(__dirname, 'public')));
+
+const connection = new autobahn.Connection({
+  url: wsuri,
+  realm: "realm1"
+});
+
+connection.onopen = session => {
+  const marketEvent = (args, kwargs) => {
+    console.log('args: ', args);
+    console.log('kwargs: ', kwargs);
+  }
+  session.subscribe('BTC_ETH', marketEvent);
+  session.publish('com.myapp.hello', ['Hello, world!']);
+}
+
+connection.onclose = () => {
+  console.log("Websocket connection closed");
+}
+
+connection.open();
 
 app.get('/', (request, response) => {
   response.sendFile(__dirname + './public/index.html');

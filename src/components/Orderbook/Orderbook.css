@@ -2,10 +2,36 @@
   width: 100%;
 }
 
+.exchange {
+  margin-left: 20px;
+}
+
+.exchange-table {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
 .title-row,
 .row {
   align-items: center;
   display: flex;
   justify-content: space-around;
   width: 600px;
+}
+
+.data-title {
+  align-items: center;
+  border: 1px solid #9c9c9c;
+  display: flex;
+  height: 30px;
+  justify-content: center;
+  width: 25%; 
+}
+
+.data {
+  border: 1px solid #9c9c9c;  
+  display: flex;
+  padding-left: 5px;
+  width: 25%;
 }
