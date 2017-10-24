@@ -21,7 +21,9 @@
 }
 
 .data-title {
+  align-items: center;
   border: 1px solid #9c9c9c;
+  display: flex;
   height: 30px;
   justify-content: center;
   width: 25%; 

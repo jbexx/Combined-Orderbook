@@ -5,11 +5,13 @@
   "dependencies": {
     "autobahn": "^17.5.2",
     "body-parser": "^1.18.2",
+    "chart.js": "^2.7.0",
     "express": "^4.16.2",
     "knex": "^0.13.0",
     "lodash": "^4.17.4",
     "pg": "^7.3.0",
     "react": "^16.0.0",
+    "react-chartjs-2": "^2.6.4",
     "react-dom": "^16.0.0",
     "react-scripts": "1.0.14",
     "socket.io": "^2.0.3"
