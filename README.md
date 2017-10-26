@@ -4,7 +4,7 @@
 
 #### About The Application
 
-This application shows the orderbooks from the Bittrex and Poloniex Exchanges and compares their volumes at a specific price point.  For this application I built a backend API I've called the CombAPI (Combined Orderbook API).  It was built with data consumed from both exchange's APIs and put in seperate tables in the same database.  For live data I brought in Poloniex's Websocket to stream data on the front-end.  Implementing this feature would have been very interesting to use for updating the charts with live data, but would make hitting the CombAPI obsolete, so I left this bit of code commented out in the App.js React Component. 
+This application shows the orderbooks from the Bittrex and Poloniex Exchanges and compares their volumes at a specific price point.  For this application I built a backend API I've called the CombAPI (Combined Orderbook API).  It was built with data consumed from both exchange's APIs and put in seperate tables in the same database.  For live data I brought in Poloniex's Websocket to stream data on the front-end.  Implementing this feature would have been very interesting to use for updating the charts with live data, but would make hitting the CombAPI obsolete, so I left this bit of code commented out in the Chart.js React Component. 
 
 #### About The API
 
