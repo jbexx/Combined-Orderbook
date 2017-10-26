@@ -1,5 +1,5 @@
-const bittrexBook = require('../../../bittrex-book.json');
-const poloniexBook = require('../../../poloniex-book.json');
+const bittrexBook = require('../../../bittrex-book-test.json');
+const poloniexBook = require('../../../poloniex-book-test.json');
 
 const createPoloniexBook = (knex, bid, ask) => {
   return knex('poloniex_book').insert({
