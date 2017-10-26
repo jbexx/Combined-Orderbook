@@ -10,9 +10,9 @@ The return format for all endpoints is [JSON](http://json.org/ "JSON").
 
 ## Endpoints
 
-- [**GET exchange_book**]()
-- [**GET all-books**]()
-- [**POST authenticate**]()
-- [**DELETE price-info**]()
-- [**POST exchange_book**]()
-- [**PATCH price-info**]()
+- [**GET exchange_book**](https://github.com/jbexx/Combined-Orderbook/blob/master/markdowns/GET%20exchange-book.md)
+- [**GET all-books**](https://github.com/jbexx/Combined-Orderbook/blob/master/markdowns/GET%20all-books.md)
+- [**POST authenticate**](https://github.com/jbexx/Combined-Orderbook/blob/master/markdowns/POST%20authenticate.md)
+- [**DELETE price-info**](https://github.com/jbexx/Combined-Orderbook/blob/master/markdowns/DELETE%20price-info.md)
+- [**POST exchange_book**](https://github.com/jbexx/Combined-Orderbook/blob/master/markdowns/POST%20exchange_book.md)
+- [**PATCH price-info**](https://github.com/jbexx/Combined-Orderbook/blob/master/markdowns/PATCH%20exchange_book.md)
