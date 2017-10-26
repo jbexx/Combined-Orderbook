@@ -7,21 +7,35 @@
   width: 100%;
 }
 
-.chart-axis {
-  height: 60%;
-  width: 80%;
-}
-
-.axis {
-  stroke: #7c7c7c;
-  stroke-width: 1;
-}
-
-.label-title {
-  font-weight: 600;
-}
-
 .chart {
-  height: 80%;
+  width: 47%;
+}
+
+.combined-charts {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.x-label {
+  margin: 0;
+  margin-right: -15px;
+  transform: rotate(-90deg);
+}
+
+.chart-title {
+  font-size: 1.8rem;
+  margin: 10px auto;
+  width: 10%;
+}
+
+.line-break {
+  border: .5px solid #d1d2d3;   
+  height: .5px;
+  margin-top: 10px; 
   width: 80%;
+}
+
+.bottom-line {
+  margin-bottom: 70px;
 }

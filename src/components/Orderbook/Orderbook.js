@@ -1,15 +1,14 @@
 import React, { Component } from 'react';
 import './Orderbook.css';
+import { object, string } from 'prop-types';
 
 class Orderbook extends Component {
   render() {
-    console.log('props in orderbook comp', this.props);
-
     const { exchange, orders } = this.props;
     const cleanedExchangeName = exchange.split('_').join(' ').toUpperCase();
-    const mappedExchangeInfo = orders.map( order => {
+    const mappedExchangeInfo = orders.map( (order, i) => {
       return(
-        <tr className='row'>
+        <tr key={i} className='row'>
           <td className='data'>{ order.bid_volume }</td>
           <td className='data'>{ order.bid }</td>
           <td className='data'>{ order.ask }</td>
@@ -37,17 +36,12 @@ class Orderbook extends Component {
       </div>
 
       );
-      // <div className='oderbook-container'>
-      //   <h1 className='exchange'>{ cleanedExchangeName }</h1>
-      //   <div className='title-row'>
-      //     <h3>Volume</h3>
-      //     <h3>Bid</h3>
-      //     <h3>Ask</h3>
-      //     <h3>Volume</h3>
-      //   </div>
-      //   { mappedExchangeInfo }
-      // </div>
   };
 };
 
 export default Orderbook;
+
+Orderbook.PropTypes = {
+  exchange: string,
+  orders: object
+}
