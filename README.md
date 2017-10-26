@@ -10,9 +10,9 @@ The return format for all endpoints is [JSON](http://json.org/ "JSON").
 
 ## Endpoints
 
-- [**GET exchange_book**](https://github.com/mschae16/byob/blob/master/documentation/GET-ports.md)
-- [**GET all-books**](https://github.com/mschae16/byob/blob/master/documentation/GET-port-usage.md)
-- [**POST authenticate**](https://github.com/mschae16/byob/blob/master/documentation/POST-authenticate.md)
-- [**DELETE price-info**](https://github.com/mschae16/byob/blob/master/documentation/POST-ports.md)
-- [**POST exchange_book**](https://github.com/mschae16/byob/blob/master/documentation/POST-ships.md)
-- [**PATCH price-info**](https://github.com/mschae16/byob/blob/master/documentation/PATCH-port.md)
+- [**GET exchange_book**]()
+- [**GET all-books**]()
+- [**POST authenticate**]()
+- [**DELETE price-info**]()
+- [**POST exchange_book**]()
+- [**PATCH price-info**]()
