@@ -1,4 +1,5 @@
 const express = require('express');
+const fs = require('fs');
 const app = express();
 const path = require('path');
 const bodyParser = require('body-parser');
@@ -13,12 +14,16 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
   extended: true
 }));
-app.use(express.static(path.join(__dirname, './build')));
+app.use(express.static(path.join(__dirname, 'build')));
+
+
 app.set('port', process.env.PORT || 3001);
 app.set('secretKey', process.env.SECRET_KEY);
 
 app.get('/', (request, response) => {
-  response.sendFile(__dirname + './build', 'index.html');
+  fs.readFile(`${__dirname}/build/index.html`, (err, file) => {
+    response.send(file);
+  });
 });
 
 // Middleware for Authentication
