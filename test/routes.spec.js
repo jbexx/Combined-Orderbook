@@ -47,7 +47,7 @@ describe('API Routes', () => {
   });
 
   describe('POST /api/v1/user/authenticate', () => {
-    it('should generate a token for new user', (done) => {
+    it.skip('should generate a token for new user', (done) => {
       chai.request(server)
         .post('/api/v1/user/authenticate')
         .send({
@@ -63,7 +63,7 @@ describe('API Routes', () => {
         });
     });
 
-    it('should not return a token if missing data', (done) => {
+    it.skip('should not return a token if missing data', (done) => {
       chai.request(server)
         .post('/api/v1/user/authenticate')
         .send({
