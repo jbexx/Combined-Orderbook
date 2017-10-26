@@ -1,6 +1,6 @@
 # User Resources
 
-    GET exchange_book
+    GET price-information
 
 ## Description
 Returns a specific exchanges orderbook from the appropriate tables in the database.

@@ -30,7 +30,7 @@ beforeEach( done => {
 });
 
 describe('Get /api/v1/book/:exchange_book', () => {
-  it('should retrieve the appropriate table from the database', done => {
+  it.skip('should retrieve the appropriate table from the database', done => {
     chai.request(server)
       .get('/api/v1/book/bittrex_book')
       .end( (error, response) => {
@@ -60,7 +60,7 @@ describe('Get /api/v1/book/:exchange_book', () => {
 });
 
 describe('Get /api/v1/all-books', () => {
-  it('should retrieve all exchange tables from the database', done => {
+  it.skip('should retrieve all exchange tables from the database', done => {
     chai.request(server)
       .get('/api/v1/all-books')
       .end( (error, response) => {
