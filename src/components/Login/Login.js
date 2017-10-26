@@ -3,7 +3,6 @@ import './Login.css';
 import { func } from "prop-types";
 
 const Login = (props) => {
-  console.log('pros in login', props);
   
   return (
     <form className="form">
