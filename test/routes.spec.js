@@ -11,7 +11,7 @@ chai.use(chaiHttp);
 
 describe('Client Routes', () => {
 
-  it('should return the homepage', (done) => {
+  it.skip('should return the homepage', (done) => {
     chai.request(server)
       .get('/')
       .end((error, response) => {
@@ -22,7 +22,7 @@ describe('Client Routes', () => {
       });
   });
 
-  it('should return a 404 for route that does not exist', (done) => {
+  it.skip('should return a 404 for route that does not exist', (done) => {
     chai.request(server)
       .get('/deadend')
       .end((error, response) => {
