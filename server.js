@@ -13,12 +13,12 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
   extended: true
 }));
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, './build')));
 app.set('port', process.env.PORT || 3001);
 app.set('secretKey', process.env.SECRET_KEY);
 
 app.get('/', (request, response) => {
-  response.sendFile(__dirname + './public/index.html');
+  response.sendFile(__dirname + './build', 'index.html');
 });
 
 // Middleware for Authentication
