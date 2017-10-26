@@ -30,7 +30,7 @@ beforeEach( done => {
 });
 
 describe('Get /api/v1/book/:exchange_book', () => {
-  it.skip('should retrieve the appropriate table from the database', done => {
+  it('should retrieve the appropriate table from the database', done => {
     chai.request(server)
       .get('/api/v1/book/bittrex_book')
       .end( (error, response) => {
@@ -49,7 +49,7 @@ describe('Get /api/v1/book/:exchange_book', () => {
     });
   });
 
-  it.skip('should return a 404 if the parameter is not found', (done) => {
+  it('should return a 404 if the parameter is not found', (done) => {
     chai.request(server)
       .get('/api/v1/book/')
       .end( (error, response) => {
@@ -60,7 +60,7 @@ describe('Get /api/v1/book/:exchange_book', () => {
 });
 
 describe('Get /api/v1/all-books', () => {
-  it.skip('should retrieve all exchange tables from the database', done => {
+  it('should retrieve all exchange tables from the database', done => {
     chai.request(server)
       .get('/api/v1/all-books')
       .end( (error, response) => {
@@ -94,7 +94,7 @@ describe('Get /api/v1/all-books', () => {
         done();
       });
     });
-    it.skip('should return a 404 if the url is incorrect', (done) => {
+    it('should return a 404 if the url is incorrect', (done) => {
       chai.request(server)
         .get('/api/v1/no-books')
         .end( (error, response) => {

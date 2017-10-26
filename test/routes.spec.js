@@ -11,7 +11,7 @@ chai.use(chaiHttp);
 
 describe('Client Routes', () => {
 
-  it.skip('should return the homepage', (done) => {
+  it('should return the homepage', (done) => {
     chai.request(server)
       .get('/')
       .end((error, response) => {
@@ -22,7 +22,7 @@ describe('Client Routes', () => {
       });
   });
 
-  it.skip('should return a 404 for route that does not exist', (done) => {
+  it('should return a 404 for route that does not exist', (done) => {
     chai.request(server)
       .get('/deadend')
       .end((error, response) => {
@@ -47,7 +47,7 @@ describe('API Routes', () => {
   });
 
   describe('POST /api/v1/user/authenticate', () => {
-    it.skip('should generate a token for new user', (done) => {
+    it('should generate a token for new user', (done) => {
       chai.request(server)
         .post('/api/v1/user/authenticate')
         .send({
@@ -63,7 +63,7 @@ describe('API Routes', () => {
         });
     });
 
-    it.skip('should not return a token if missing data', (done) => {
+    it('should not return a token if missing data', (done) => {
       chai.request(server)
         .post('/api/v1/user/authenticate')
         .send({
