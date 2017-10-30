@@ -3,7 +3,7 @@ import './App.css';
 import Chart from '../Chart/Chart';
 import Login from '../Login/Login';
 import Orderbook from '../Orderbook/Orderbook';
-import gif from '../../assets/erX8pas.gif'
+import gif from 'https://i.imgur.com/erX8pas.gif'
 
 class App extends Component {
   constructor() {
@@ -11,6 +11,8 @@ class App extends Component {
     this.state = {
       books: {}
     }
+
+    this.logIn = this.logIn.bind(this);
   }
 
   componentDidMount() {
@@ -55,7 +57,7 @@ class App extends Component {
         { !bookKeys.length ? <div className='error-cover'> <img src={ gif } alt='wall-e gif' /><p>Sorry, our data seems to be hiding, please refresh the page</p></div> : null }
         <header className='header-title'>
           Combined Orderbook
-          <Login submit={ this.logIn.bind(this) }/>
+          <Login submit={ this.logIn }/>
         </header>
         <Chart orderbooks={ books } />
         <div className='orderbooks'>
