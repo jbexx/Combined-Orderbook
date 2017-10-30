@@ -3,7 +3,7 @@
     DELETE price-information
 
 ## Description
-Delete a information of a specific price from a specific table in the database
+Delete information of a specific price from a specific table in the database
 
 ***
 
