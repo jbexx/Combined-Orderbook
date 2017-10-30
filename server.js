@@ -142,15 +142,15 @@ app.patch('/api/v1/:exchange_book/:id', checkAuth, (request, response) => {
       error: 'Expected format: { bid_volume: <String>, bid: <String>, ask: <String>, ask_volume: <String> }.  You\'re missing a valid property.'
     })
 
-    database(`${exchange_book}`).where({ id })
-      .update({
-        bid_volume,
-        bid,
-        ask,
-        ask_volume
-      }, '*')
-      .then( update => response.status(200).json(update) )
-      .catch( error => response.status(500).json({ error }) );
+  database(`${exchange_book}`).where({ id })
+    .update({
+      bid_volume,
+      bid,
+      ask,
+      ask_volume
+    }, '*')
+    .then( update => response.status(200).json(update) )
+    .catch( error => response.status(500).json({ error }) );
   }
 });
 

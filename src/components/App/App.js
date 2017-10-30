@@ -3,6 +3,7 @@ import './App.css';
 import Chart from '../Chart/Chart';
 import Login from '../Login/Login';
 import Orderbook from '../Orderbook/Orderbook';
+import gif from '../../assets/erX8pas.gif'
 
 class App extends Component {
   constructor() {
@@ -46,9 +47,12 @@ class App extends Component {
   render() {
     const { books } = this.state;
     const bookKeys = Object.keys(books);
+    console.log('books in app', bookKeys.length);
+    
     const orderbooks = bookKeys.map( (book, i) => <Orderbook key={ book } exchange={ book } orders={ books[book] } /> );
     return (
       <div className='app-container'>
+        { !bookKeys.length ? <div className='error-cover'> <img src={ gif } alt='wall-e gif' /><p>Sorry, our data seems to be hiding, please refresh the page</p></div> : null }
         <header className='header-title'>
           Combined Orderbook
           <Login submit={ this.logIn.bind(this) }/>
