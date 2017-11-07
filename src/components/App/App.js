@@ -54,7 +54,7 @@ class App extends Component {
     const orderbooks = bookKeys.map( (book, i) => <Orderbook key={ book } exchange={ book } orders={ books[book] } /> );
     return (
       <div className='app-container'>
-        { !bookKeys.length ? <div className='error-cover'> <img src={ gif } alt='wall-e gif' /><p>Sorry, our data seems to be moving slowly, please wait just a moment</p></div> : null }
+        { !bookKeys.length ? <div className='error-cover'> <p>Sorry, our data seems to be moving slowly, please wait just a moment</p></div> : null }
         <header className='header-title'>
           Combined Orderbook
           <Login submit={ this.logIn }/>
@@ -66,6 +66,7 @@ class App extends Component {
       </div>
     );
   };
+  // <img src={ gif } alt='wall-e gif' />
 };
 
 export default App;
