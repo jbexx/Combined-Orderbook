@@ -3,7 +3,7 @@ import './App.css';
 import Chart from '../Chart/Chart';
 import Login from '../Login/Login';
 import Orderbook from '../Orderbook/Orderbook';
-import gif from 'https://i.imgur.com/erX8pas.gif'
+// import gif from 'https://i.imgur.com/erX8pas.gif'
 
 class App extends Component {
   constructor() {
