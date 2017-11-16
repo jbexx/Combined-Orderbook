@@ -261,6 +261,12 @@ class Chart extends Component {
         }
       }
     }
+
+    // instead of using this websocket, look into using a cron job.
+      // A cron job is a script that will run on set schedule to hit the api's I choose
+      // and could run the seed again to update my database for a bit more accurate information
+
+
     // const connection = new autobahn.Connection({
     //   url: wsuri,
     //   realm: "realm1"
